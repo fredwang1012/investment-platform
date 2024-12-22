@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the external CSS stylesheet. Uncomment if you wish to customize or add styling. -->
+    <!-- <link rel="stylesheet" href="styles.css">   -->
+
+    <title>Wealth Complex - My Account</title>
+</head>
+<body>
+    <!-- ===================================================================================== -->
+    <!-- Display the current status of the database connection. 
+         !!HERE TO HELP U DEBUGGING, NOT REQUIRED IN YOUR OWN PROJECT!!
+         -->
+    <h1>Database Connection Status: 
+        <!-- An in-line placeholder to display connection status. -->
+        <span id="dbStatus"> </span>
+        <!-- A loading GIF, will be hided once get the status. -->
+        <img id="loadingGif" class="loading-gif" src="loading_100px.gif" alt="Loading...">
+    </h1>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <!-- Show Navigation -->
+    <nav align="right">
+    <a href="/research.html">Research</a>
+    <a href="/trading.html">Trading</a>
+    <a href="/account.html">Account</a>
+    </nav>
+
+    <!-- Show Page Header -->
+    <h1 align="center">My Account</h1>
+    <h3 align="center">Frodo Baggins</h3>
+    <br>
+    <br>
+
+    <!-- Show User Information -->
+    <h2><ins>User Information</ins></h2>
+    <table id="userInfo" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>SIN/SSN</th>
+                <th>Username</th>
+                <th>Address</th>
+                <th>Postal Code</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br><br>
+    
+    <h3><i>Edit User Information</i></h3>
+    <section>
+        <b>Name</b>
+        <form id="updateUserTable">
+            <input type="hidden" id="field" value="Name">
+            Old Name: <input type="text" id="oldValue" placeholder="Enter Old Name" maxlength="50" required pattern="[A-Za-z]+" title="Name can only contain alphabetical characters">
+            New Name: <input type="text" id="newValue" placeholder="Enter New Name" maxlength="50" required pattern="[A-Za-z]+" title="Name can only contain alphabetical characters">
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Date of Birth</b>
+        <form id="updateUserTable">
+            <input type="hidden" id="field" value="DOB">
+            Old DOB: <input type="date" id="oldValue" required>
+            New DOB: <input type="date" id="newValue" required>
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>SIN/SSN</b>
+        <form id="updateUserTable">
+            <input type="hidden" id="field" value="SIN_SSN">
+            Old SIN/SSN: <input type="number" id="oldValue" placeholder="Enter Old SIN/SSN" maxlength="50" required>
+            New SIN/SSN: <input type="number" id="newValue" placeholder="Enter Old SIN/SSN" maxlength="50" required>
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Address</b>
+        <form>
+            <input type="hidden" id="field" value="Address">
+                Old Address: <input type="text" id="oldValue" placeholder="Enter Old Address" maxlength="50" required pattern="[A-Za-z0-9 ]+" title="Address can only contain alphanumeric characters">
+                New Address: <input type="text" id="newValue" placeholder="Enter Old Address" maxlength="50" required pattern="[A-Za-z0-9 ]+" title="Address can only contain alphanumeric characters">
+                <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Postal Code</b>
+        <form>
+            <input type="hidden" id="field" value="PostalCode">
+                Old Postal Code: <input type="text" id="oldValue" placeholder="Enter Old Postal Code" maxlength="7" required pattern="[A-Z0-9]{3} [A-Za-z0-9]{3}" title="Postal code must be in the format 'X#X #X#'">
+                New Postal Code: <input type="text" id="newValue" placeholder="Enter Old Postal Code" maxlength="7" required pattern="[A-Z0-9]{3} [A-Za-z0-9]{3}" title="Postal code must be in the format 'X#X #X#'">
+                <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+
+
+    <!-- <form id="updateUserTable">
+        Field: <select name="field" id="field" required>
+                <option value="Name">Name</option>
+                <option value="SIN_SSN">SIN/SSN</option>
+                <option value="Address">Address</option>
+                <option value="DOB">Date of Birth</option>
+                <option value="PostalCode">Postal Code</option>
+            </select>    
+        Value: <input type="text" id="insertName" placeholder="Enter Name" maxlength="20"> <br><br>
+
+        <button type="submit"> insert </button> <br>
+    </form> -->
+    
+
+
+    <!-- Show Accounts -->
+    <h2><ins>Accounts</ins></h2> 
+    <button type="button" disabled>ADD</button>
+    <p><span><b>ACC005</b></span> Investment Account</p>   <!-- This can be hardcoded b/c does not change as result of queries -->
+    <table id="userAccs" border="1">
+        <thead>
+            <tr>
+                <th>Total Balance</th>
+                <th>Cash Balance</th>
+                <th>Equity Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Equity</th> <!-- vv Sourced from Holds + Listed Equity table -->
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!-- <h3><b>Total Balance</b></h3>
+    <h3><b>Cash Balance</b></h3>
+    <h3><b>Equity Balance</b></h3>
+    <h3><b>Equity</b></h3>
+    <h3><b>Quantity</b></h3>
+    <h3><b>Price</b></h3> -->
+    
+
+
+    
+    <!-- Show Banking Information -->
+    <h2><ins>Banking Information</ins></h2> <button type="button">ADD</button>
+    <table id="userBank" border="1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Account Number</th>
+                <th>Institution Number</th>
+                <th>Transit Number</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!-- <h3><b>[Type]</b></h3>
+    <h3><b>Account Number</b></h3>
+    <h3><b>Institution Number</b></h3>
+    <h3><b>Transit Number</b></h3> -->
+
+
+    <!-- ===================================================================================== -->
+    <!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+    <script src="scripts.js"></script>
+</body>
+</html>

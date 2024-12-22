@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the external CSS stylesheet to maintain consistent styling with the Trading page. -->
+    <link rel="stylesheet" href="stylesTrading.css">
+
+    <title>Wealth Complex - Research</title>
+</head>
+<body>
+<!-- ===================================================================================== -->
+<!-- Display the current status of the database connection.
+     !!HERE TO HELP YOU DEBUGGING, NOT REQUIRED IN YOUR OWN PROJECT!!
+-->
+<!--<h1 id="dbStatusContainer">Database Connection Status:-->
+<!--    &lt;!&ndash; An in-line placeholder to display connection status. &ndash;&gt;-->
+<!--    <span id="dbStatus"> </span>-->
+<!--    &lt;!&ndash; A loading GIF, will be hidden once get the status. &ndash;&gt;-->
+<!--    <img id="loadingGif" class="loading-gif" src="loading_100px.gif" alt="Loading..." style="display: none;">-->
+<!--</h1>-->
+
+<!--<br><hr><br> &lt;!&ndash; ========================================================================= &ndash;&gt;-->
+
+<!-- Show Navigation -->
+<nav align="right">
+    <a href="/research.html">Research</a>
+    <a href="/trading.html">Trading</a>
+    <a href="/index.html">Account</a>
+</nav>
+
+<!-- Show Page Header -->
+<h1 align="center">Research</h1>
+<br><br>
+
+<!-- Show Equity Search -->
+<h2 align="center"><ins>Equity Search</ins></h2>
+<div id="dropdownLoading" style="display: none;">
+    <p>Loading filters...</p>
+</div>
+
+<!-- Filter Section -->
+<div class="filterSection">
+    <div class="filterGroup">
+        <label for="stockExchangeSelect">Stock Exchange:</label>
+        <select id="stockExchangeSelect" multiple>
+        </select>
+    </div>
+
+    <div class="filterGroup">
+        <label for="companySelect">Company:</label>
+        <select id="companySelect" multiple>
+        </select>
+    </div>
+
+    <div class="filterGroup">
+        <label for="equityTypeSelect">Equity Type:</label>
+        <select id="equityTypeSelect" multiple>
+        </select>
+    </div>
+
+    <div class="filterGroup">
+        <button id="filterButton" class="btn btn-primary">Filter</button>
+        <button id="resetFilterButton" class="btn btn-secondary">Reset Filters</button>
+    </div>
+</div>
+
+<br>
+
+<div id="loading" style="display: none;">
+    <p>Loading equities, please wait...</p>
+</div>
+
+<div id="errorMsg"></div>
+
+<!-- Table Container -->
+<div class="table-container">
+    <table id="stockInfo">
+        <thead>
+        <tr>
+            <th>Select</th>
+            <th>Ticker Symbol</th>
+            <th>Company</th>
+            <th>Stock Exchange</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Issue Date</th>
+            <th>Currency</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+<!--    <form id="addToWatchlistForm" class="form-inline">-->
+<!--        <label for="watchlistSelect">Select Watchlist:</label>-->
+<!--        <select id="watchlistSelect">-->
+<!--        </select>-->
+<!--        <button id="addToWatchlistButton" class="btn btn-primary" type="button">Add Selected to Watchlist</button>-->
+<!--    </form>-->
+</div>
+
+<h2 align="center"><ins>Company Search</ins></h2>
+
+<!-- Filter Section -->
+<div class="filterSection">
+    <div class="filterGroup">
+        <label for="countrySelect">Country:</label>
+        <select id="countrySelect" multiple>
+        </select>
+    </div>
+
+    <div class="filterGroup">
+        <button id="countryFilterButton" class="btn btn-primary">Filter</button>
+        <button id="countryResetFilterButton" class="btn btn-secondary">Reset Filters</button>
+    </div>
+</div>
+
+<br>
+
+<div class="table-container">
+    <table id="companyInfo">
+        <thead>
+        <tr>
+            <th>Company</th>
+            <th>Stock Exchange</th>
+            <th>Market Cap</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<br><br>
+
+
+
+<div class="divisionSection">
+    <button id="divisionButton" class="btn btn-primary">Show Companies with Both Stock and CDR</button>
+</div>
+
+<!-- Division Table -->
+<table id="divisionTable" style="display: none;">
+    <thead>
+    <tr>
+        <th>Company Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<br><br>
+
+
+
+<div class="countSection" align="center">
+    <button id="countEquityTypesButton" class="btn btn-success">Show Equity Type Counts</button>
+</div>
+
+<br>
+
+<!-- Equity Type Counts Table -->
+<div class="table-container">
+    <table id="equityTypeCountsTable" style="display: none;">
+        <thead>
+        <tr>
+            <th>Company</th>
+            <th>Equity Type</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+<script src="scripts.js"></script>
+
+<!--<script>-->
+<!--    window.onload = function() {-->
+<!--        attachResearchPageEventListeners();-->
+<!--    };-->
+<!--</script>-->
+</body>
+</html>
+
+
+
+

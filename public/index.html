@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the external CSS stylesheet. Uncomment if you wish to customize or add styling. -->
+    <link rel="stylesheet" href="stylesTrading.css">  
+
+    <title>Wealth Complex - My Account</title>
+</head>
+<body>
+    <!-- ===================================================================================== -->
+    <!-- Display the current status of the database connection. 
+         !!HERE TO HELP U DEBUGGING, NOT REQUIRED IN YOUR OWN PROJECT!!
+         -->
+    <!-- <h1>Database Connection Status:  -->
+        <!-- An in-line placeholder to display connection status. -->
+        <!-- <span id="dbStatus"> </span> -->
+        <!-- A loading GIF, will be hided once get the status. -->
+        <!-- <img id="loadingGif" class="loading-gif" src="loading_100px.gif" alt="Loading..."> -->
+    <!-- </h1> -->
+    
+    <br><hr><br> <!-- ========================================================================= -->
+    
+    <!-- Show Navigation -->
+    <nav align="right">
+        <a href="/research.html">Research</a>
+        <a href="/trading.html">Trading</a>
+        <a href="/index.html">Account</a>
+    </nav>
+
+    <h1 align="center"><b>Wealth Complex</b></h1>
+    <br><hr><br>
+    
+    <!-- Show Page Header -->
+    <h2 align="center">My Account</h2>
+    <h3 align="center">Frodo Baggins</h3>
+    <br>
+    <br>
+    
+    <!-- Show User Information -->
+    <h4><ins>User Information</ins></h4>
+    <table id="userInfo">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>SIN/SSN</th>
+                <th>Username</th>
+                <th>Address</th>
+                <th>Postal Code</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br>
+    
+    <h5><i>Edit User Information</i></h5>
+    <!-- A placeholder to display messages related to the update operation. -->
+    <div id="updateUserResultMsg"></div>
+    <section>
+        <b>Name</b>
+        <form id="updateUserTable1">
+            <input type="hidden" id="field1" value="Name">
+            Old Name: <input type="text" id="oldValue1" placeholder="Enter Old Name" maxlength="50" required pattern="[A-Za-z ]+" title="Name can only contain alphabetical characters">
+            New Name: <input type="text" id="newValue1" placeholder="Enter New Name" maxlength="50" required pattern="[A-Za-z ]+" title="Name can only contain alphabetical characters">
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Date of Birth</b>
+        <form id="updateUserTable2">
+            <input type="hidden" id="field2" value="DOB">
+            Old DOB: <input type="text" placeholder="Enter Old Date (DD-MM-YYYY)" id="oldValue2" required maxlength="50" pattern="[0-9\-]+" title="Please match the date format DD-MM-YYYY">
+            New DOB: <input type="text" placeholder="Enter New Date (DD-MM-YYYY)" id="newValue2" required maxlength="50" pattern="[0-9\-]+" title="Please match the date format DD-MM-YYYY">
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>SIN/SSN</b>
+        <form id="updateUserTable3">
+            <input type="hidden" id="field3" value="SIN_SSN">
+            Old SIN/SSN: <input type="text" id="oldValue3" placeholder="Enter Old SIN/SSN" maxlength="50" required pattern="[A-Za-z0-9]+" title="SIN/SSN can only contain alphabetical characters">
+            New SIN/SSN: <input type="text" id="newValue3" placeholder="Enter Old SIN/SSN" maxlength="50" required pattern="[A-Za-z0-9]+" title="SIN/SSN can only contain alphabetical characters">
+            <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Address</b>
+        <form id="updateUserTable4">
+            <input type="hidden" id="field4" value="Address">
+                Old Address: <input type="text" id="oldValue4" placeholder="Enter Old Address" maxlength="50" required pattern="[A-Za-z0-9 \,]+" title="Address can only contain alphanumeric characters">
+                New Address: <input type="text" id="newValue4" placeholder="Enter Old Address" maxlength="50" required pattern="[A-Za-z0-9 \,]+" title="Address can only contain alphanumeric characters">
+                <button type="submit"> Submit </button>
+        </form>
+    </section> <br>
+    <section>
+        <b>Postal Code</b>
+        <form id="updateUserTable5">
+            <input type="hidden" id="field5" value="PostalCode">
+                Old Postal Code: <input type="text" id="oldValue5" placeholder="Enter Old Postal Code" maxlength="7" required pattern="[A-Z0-9]{3} [A-Za-z0-9]{3}" title="Postal code must be in the format 'X#X #X#'">
+                New Postal Code: <input type="text" id="newValue5" placeholder="Enter Old Postal Code" maxlength="7" required pattern="[A-Z0-9]{3} [A-Za-z0-9]{3}" title="Postal code must be in the format 'X#X #X#'">
+                <button type="submit"> Submit </button>
+        </form>
+    </section> <br><br><br>
+    
+
+
+    <!-- Show Accounts -->
+    <h4><ins>Accounts</ins></h4> 
+<!--    <button type="button" disabled>ADD</button>-->
+    <p><span><b>ACC005</b></span> - Investment Account</p>   <!-- This can be hardcoded b/c does not change as result of queries -->
+    <table id="userInvestAcc">
+        <thead>
+            <tr>
+                <th>Total Balance</th>
+                <th>Cash Balance</th>
+                <th>Equity Balance</th>
+                <th>Date Opened</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br>
+    <p><span><b>ACC006</b></span> - Retirement Account</p>   <!-- This can be hardcoded b/c does not change as result of queries -->
+    <table id="userRetireAcc">
+        <thead>
+            <tr>
+                <th>Total Balance</th>
+                <th>Cash Balance</th>
+                <th>Equity Balance</th>
+                <th>Date Opened</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br><br><br>
+    
+
+
+    <!-- Show Banking Information -->
+    <h4><ins>Banking Information</ins></h4>
+<!--    <button type="button" disabled>ADD</button> <br>-->
+    <table id="userBank">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Account Number</th>
+                <th>Institution Number</th>
+                <th>Transit Number</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br>
+
+    <h5><i>Edit Banking Information</i></h5>
+    <!-- A placeholder to display messages related to the update operation. -->
+    <div id="deleteBankResultMsg"></div>
+    <section>
+        <b>Name</b>
+        <form id="deleteUserBank">
+            Account Number: <input type="text" id="acc" placeholder="Enter Account Number" maxlength="50" required pattern="[A-Za-z0-9]+" title="Account number can only contain alphanumeric characters">
+            Institution Number: <input type="text" id="inst" placeholder="Enter Inst. Number" maxlength="50" required pattern="[A-Za-z0-9]+" title="Institution number can only contain alphanumeric characters">
+            Transit Number: <input type="text" id="trans" placeholder="Enter Transit Number" maxlength="50" required pattern="[A-Za-z0-9]+" title="Transit number can only contain alphanumeric characters">
+            <button type="submit"> Delete </button>
+        </form>
+    </section> <br><br><br>
+
+
+    <!-- ===================================================================================== -->
+    <!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+    <script src="scripts.js"></script>
+<!--    <script>-->
+<!--        window.onload = function() {-->
+<!--            attachAccountPageEventListeners();-->
+<!--        };-->
+<!--    </script>-->
+</body>
+</html>
